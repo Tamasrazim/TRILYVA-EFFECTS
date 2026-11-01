@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+; Optional: enables unsigned CEP extensions for the current Windows user.
+; Review before importing. Restart After Effects after changing this value.
+[HKEY_CURRENT_USER\Software\Adobe\CSXS.11]
+"PlayerDebugMode"="1"
+
+[HKEY_CURRENT_USER\Software\Adobe\CSXS.12]
+"PlayerDebugMode"="1"
