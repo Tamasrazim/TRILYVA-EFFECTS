@@ -1,0 +1,57 @@
+:root{color-scheme:dark;--bg:#101010;--panel:#171717;--line:#303030;--muted:#898989;--text:#f3f3f3;--mono:Consolas,"SFMono-Regular",monospace;--sans:"Segoe UI",Arial,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:var(--sans)}
+body{min-width:290px}
+button{color:inherit;font:inherit;cursor:pointer}
+.app-shell{min-height:100vh;display:flex;flex-direction:column}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:16px 18px 14px;border-bottom:1px solid var(--line)}
+.brand-lockup{display:flex;align-items:center;gap:10px}
+.brand-mark{width:28px;height:28px;display:grid;place-items:center;border:1px solid #777;font-size:17px;font-weight:700}
+.brand-name{font-size:12px;font-weight:700;letter-spacing:1.7px}
+.brand-caption{margin-top:3px;color:var(--muted);font-size:8px;letter-spacing:1px;font-family:var(--mono)}
+.version{color:#777;font:10px var(--mono)}
+main{padding:0 16px 20px;flex:1}
+.section-tabs{display:flex;gap:18px;align-items:center;min-height:42px;border-bottom:1px solid var(--line)}
+.section-tab{height:42px;border:0;border-bottom:2px solid var(--text);background:transparent;font:9px var(--mono);letter-spacing:1px}
+.section-note{color:#606060;font:9px var(--mono);letter-spacing:.8px}
+.intro{padding:21px 2px 17px}
+.eyebrow{color:#929292;font:9px var(--mono);letter-spacing:1.2px}
+h1{margin:8px 0 5px;font-size:24px;font-weight:550;letter-spacing:-.8px}
+.intro p,.apply-copy p{margin:0;max-width:410px;color:#969696;font-size:11px;line-height:1.5}
+.card{margin-bottom:12px;padding:14px;border:1px solid var(--line);background:var(--panel)}
+.card-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px}
+h2{margin:5px 0 0;font-size:13px;font-weight:600}
+.tiny{font-size:8px;letter-spacing:.8px}
+.preset-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.preset{min-height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border:1px solid #303030;background:#1c1c1c;color:#aaa;font-size:9px}
+.preset:hover,.preset.active{border-color:#bdbdbd;background:#252525;color:#fff}
+.preset-curve{font:18px/20px var(--mono)}
+.graph-card{padding-bottom:12px}
+.graph-heading{margin-bottom:2px}
+.text-button{border:0;background:transparent;color:#aaa;font:9px var(--mono);letter-spacing:.8px}
+.text-button:hover,.small-button:hover{color:#fff}
+.graph-wrap{width:100%;margin-top:7px}
+#curveGraph{display:block;width:100%;height:auto;overflow:visible;touch-action:none}
+.grid-line{fill:none;stroke:#292929;stroke-width:1}
+.axis{fill:none;stroke:#515151;stroke-width:1}
+.curve-path{fill:none;stroke:#f4f4f4;stroke-width:2.6;stroke-linecap:round}
+.handle-lines{fill:none;stroke:#707070;stroke-width:1;stroke-dasharray:3 3}
+.endpoint{fill:#777;stroke:#181818;stroke-width:1}
+.handle{fill:#f5f5f5;stroke:#171717;stroke-width:2;cursor:grab}
+.handle:active{cursor:grabbing}
+.axis-label{fill:#737373;font:7px var(--mono);letter-spacing:.6px}
+.curve-values{display:flex;justify-content:space-between;gap:6px;color:#929292;font:9px var(--mono)}
+.graph-actions{display:flex;align-items:center;gap:7px;margin-top:13px}
+.small-button{padding:7px 9px;border:1px solid #343434;background:#202020;color:#aaa;font:8px var(--mono);letter-spacing:.5px}
+.copy-status{color:#aaa;font-size:9px}
+.apply-panel{padding:14px;border:1px solid #494949;background:#1a1a1a}
+.apply-copy p{margin-top:5px;font-size:10px}
+.apply-button{width:100%;margin-top:13px;padding:12px 13px;display:flex;align-items:center;justify-content:space-between;border:0;background:#f1f1f1;color:#111;font-size:10px;font-weight:700;letter-spacing:1px}
+.apply-button:hover{background:#d5d5d5}
+.apply-button:disabled{opacity:.45;cursor:not-allowed}
+.footer{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 17px;border-top:1px solid var(--line);color:#676767;font:8px var(--mono);letter-spacing:.5px}
+.status{display:flex;align-items:center;gap:7px}
+.status i{width:6px;height:6px;border-radius:50%;background:#777}
+.status.connected i{background:#ddd}
+.status.error i{background:#999}
+@media(max-width:340px){main{padding-left:10px;padding-right:10px}.card,.apply-panel{padding:10px}.preset-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.curve-values{font-size:8px}}
