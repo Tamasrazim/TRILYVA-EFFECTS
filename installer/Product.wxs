@@ -40,28 +40,28 @@
   <Fragment>
     <ComponentGroup Id="PanelRootFiles" Directory="INSTALLFOLDER">
       <Component Id="cmpIndexHtml" Guid="{A72B1943-2E44-4EC1-9500-DA7C9CF29B11}">
-        <File Source="!(bindpath.SourceDir)\\index.html"/>
+        <File Source="!(bindpath.SourceDir)\index.html"/>
       </Component>
       <Component Id="cmpStylesCss" Guid="{B4D6BBF3-F8AD-482E-A10E-DB9EF3DA1AC2}">
-        <File Source="!(bindpath.SourceDir)\\styles.css"/>
+        <File Source="!(bindpath.SourceDir)\styles.css"/>
       </Component>
     </ComponentGroup>
 
     <ComponentGroup Id="PanelCsxsFiles" Directory="CSXSFolder">
       <Component Id="cmpManifestXml" Guid="{C1AB7C5A-4812-4E7D-B78C-64F69753B2D3}">
-        <File Source="!(bindpath.SourceDir)\\CSXS\\manifest.xml"/>
+        <File Source="!(bindpath.SourceDir)\CSXS\manifest.xml"/>
       </Component>
     </ComponentGroup>
 
     <ComponentGroup Id="PanelJsFiles" Directory="JSFolder">
       <Component Id="cmpMainJs" Guid="{D2C45DA6-7B34-4FC3-9D57-75D5D9F3C4E5}">
-        <File Source="!(bindpath.SourceDir)\\js\\main.js"/>
+        <File Source="!(bindpath.SourceDir)\js\main.js"/>
       </Component>
     </ComponentGroup>
 
     <ComponentGroup Id="PanelJsxFiles" Directory="JSXFolder">
       <Component Id="cmpHostJsx" Guid="{E3D56EB7-8C45-40D4-AE68-86E6E0A4D5F6}">
-        <File Source="!(bindpath.SourceDir)\\jsx\\host.jsx"/>
+        <File Source="!(bindpath.SourceDir)\jsx\host.jsx"/>
       </Component>
     </ComponentGroup>
   </Fragment>
