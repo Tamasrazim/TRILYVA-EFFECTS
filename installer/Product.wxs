@@ -19,14 +19,12 @@
       <Directory Id="AdobeFolder" Name="Adobe">
         <Directory Id="CepFolder" Name="CEP">
           <Directory Id="ExtensionsFolder" Name="extensions">
-            <Directory Id="INSTALLFOLDER" Name="com.tamasrazim.trilyvaedit"/>
+            <Directory Id="INSTALLFOLDER" Name="com.tamasrazim.trilyvaedit">
+              <Files Include="!(bindpath.SourceDir)\\**"/>
+            </Directory>
           </Directory>
         </Directory>
       </Directory>
     </StandardDirectory>
-
-    <Feature Id="MainFeature" Title="TRILYVA EDIT" Level="1">
-      <Files Include="!(bindpath.SourceDir)\**" Directory="INSTALLFOLDER"/>
-    </Feature>
   </Package>
 </Wix>
