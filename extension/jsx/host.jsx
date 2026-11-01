@@ -39,6 +39,11 @@ TRILYVA.applyCurve = function (x1, y1, x2, y2) {
       return JSON.stringify({ ok: false, message: "The curve values are invalid." });
     }
 
+    // Handle zero-length end handles using the limiting cubic-Bezier slope.
+    // CSS-style curves such as ease-in/ease-out can have x1=0 or x2=1.
+    var outSlope = x1 > 0.001 ? y1 / x1 : y2 / Math.max(x2, 0.001);
+    var inSlope = x2 < 0.999 ? (1 - y2) / (1 - x2) : (1 - y1) / Math.max(1 - x1, 0.001);
+
     x1 = TRILYVA._clamp(x1, 0.001, 0.999);
     x2 = TRILYVA._clamp(x2, x1, 0.999);
     y1 = TRILYVA._clamp(y1, -2, 3);
@@ -53,8 +58,6 @@ TRILYVA.applyCurve = function (x1, y1, x2, y2) {
     var appliedProperties = 0;
     var skippedProperties = 0;
     var appliedPairs = 0;
-    var outSlope = y1 / x1;
-    var inSlope = (1 - y2) / (1 - x2);
     var outInfluence = TRILYVA._clamp(x1 * 100, 0.1, 100);
     var inInfluence = TRILYVA._clamp((1 - x2) * 100, 0.1, 100);
 
@@ -101,15 +104,16 @@ TRILYVA.applyCurve = function (x1, y1, x2, y2) {
             easeIn.push(new KeyframeEase(averageSpeed * inSlope, inInfluence));
           }
 
+          // Change only the side of each keyframe belonging to this selected pair.
           prop.setInterpolationTypeAtKey(
             startKey,
-            KeyframeInterpolationType.BEZIER,
+            prop.keyInInterpolationType(startKey),
             KeyframeInterpolationType.BEZIER
           );
           prop.setInterpolationTypeAtKey(
             endKey,
             KeyframeInterpolationType.BEZIER,
-            KeyframeInterpolationType.BEZIER
+            prop.keyOutInterpolationType(endKey)
           );
 
           prop.setTemporalEaseAtKey(
