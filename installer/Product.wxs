@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package
+    Name="TRILYVA EDIT"
+    Manufacturer="Tamasrazim"
+    Version="$(var.ProductVersion)"
+    UpgradeCode="{D1847F70-5E36-4E71-BB65-9A7F88DCB742}"
+    Scope="perUserOrMachine"
+    InstallerVersion="500">
+
+    <SummaryInformation
+      Description="TRILYVA EDIT panel for Adobe After Effects"
+      Manufacturer="Tamasrazim"/>
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of TRILYVA EDIT is already installed."/>
+    <MediaTemplate EmbedCab="yes"/>
+
+    <StandardDirectory Id="AppDataFolder">
+      <Directory Id="AdobeFolder" Name="Adobe">
+        <Directory Id="CepFolder" Name="CEP">
+          <Directory Id="ExtensionsFolder" Name="extensions">
+            <Directory Id="INSTALLFOLDER" Name="com.tamasrazim.trilyvaedit"/>
+          </Directory>
+        </Directory>
+      </Directory>
+    </StandardDirectory>
+
+    <Feature Id="MainFeature" Title="TRILYVA EDIT" Level="1">
+      <Files Include="!(bindpath.SourceDir)\**" Directory="INSTALLFOLDER"/>
+    </Feature>
+  </Package>
+</Wix>
