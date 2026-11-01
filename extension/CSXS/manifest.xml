@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionManifest Version="7.0"
+  ExtensionBundleId="com.tamasrazim.trilyvaedit"
+  ExtensionBundleVersion="0.1.0"
+  ExtensionBundleName="TRILYVA EDIT">
+  <ExtensionList>
+    <Extension Id="com.tamasrazim.trilyvaedit.panel" Version="0.1.0"/>
+  </ExtensionList>
+  <ExecutionEnvironment>
+    <HostList><Host Name="AEFT" Version="[16.0,99.9]"/></HostList>
+    <LocaleList><Locale Code="All"/></LocaleList>
+    <RequiredRuntimeList><RequiredRuntime Name="CSXS" Version="9.0"/></RequiredRuntimeList>
+  </ExecutionEnvironment>
+  <DispatchInfoList>
+    <DispatchInfo>
+      <Extension Id="com.tamasrazim.trilyvaedit.panel">
+        <DispatchInfo>
+          <Resources>
+            <MainPath>./index.html</MainPath>
+            <ScriptPath>./jsx/host.jsx</ScriptPath>
+            <CEFCommandLine><Parameter>--allow-file-access</Parameter></CEFCommandLine>
+          </Resources>
+          <Lifecycle><AutoVisible>true</AutoVisible></Lifecycle>
+          <UI>
+            <Type>Panel</Type>
+            <Menu>TRILYVA EDIT</Menu>
+            <Geometry>
+              <Size><Width>380</Width><Height>660</Height></Size>
+              <MinSize><Width>300</Width><Height>460</Height></MinSize>
+            </Geometry>
+          </UI>
+        </DispatchInfo>
+      </Extension>
+    </DispatchInfo>
+  </DispatchInfoList>
+</ExtensionManifest>
