@@ -1,12 +1,12 @@
 (function(){
 "use strict";
 var presets={
-  linear:{name:"Linear",x1:0,y1:0,x2:1,y2:1},
+  linear:{name:"Linear",x1:1/3,y1:1/3,x2:2/3,y2:2/3},
   in:{name:"Ease In",x1:.42,y1:0,x2:1,y2:1},
   out:{name:"Ease Out",x1:0,y1:0,x2:.58,y2:1},
   inout:{name:"Ease In-Out",x1:.42,y1:0,x2:.58,y2:1},
   ease:{name:"Soft",x1:.25,y1:.1,x2:.25,y2:1},
-  sharp:{name:"Sharp",x1:.7,y1:0,x2:.3,y2:1},
+  sharp:{name:"Sharp",x1:.55,y1:0,x2:.85,y2:1},
   back:{name:"Back",x1:.34,y1:1.28,x2:.68,y2:1}
 };
 var curve=Object.assign({},presets.ease);
